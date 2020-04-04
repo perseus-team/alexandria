@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.static')
+
+@section('title')
+    Verify Email Address | {{ config('app.branding', '') }} {{ config('app.name', 'Laravel') }}
+@endsection
 
 @section('content')
 <div class="container">

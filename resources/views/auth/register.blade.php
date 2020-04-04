@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.static')
+
+@section('title')
+    Register | {{ config('app.branding', '') }} {{ config('app.name', 'Laravel') }}
+@endsection
 
 @section('content')
 <div class="container">

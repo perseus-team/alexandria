@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
+use App\User;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->describe('Display an inspiring quote');
+Artisan::command('token', function () {
+    $user = User::first();
+    $token = $user->createToken('test');
+    $this->comment($token->plainTextToken);
+})->describe('Generate a token for the first user');

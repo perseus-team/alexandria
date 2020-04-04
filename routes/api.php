@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->group(function() {
 
-    // Route::get('auth-user', 'AuthUserController@show');
+    Route::get('/auth-user', function(Request $request) {
+        return $request->user();
+    });
 
     Route::apiResources([
-        // '/books' => 'BookController',
+        //'/books' => 'BookController',
     ]);
 
 });
