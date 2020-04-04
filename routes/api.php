@@ -24,4 +24,12 @@ Route::middleware('auth:sanctum')->group(function() {
         //'/books' => 'BookController',
     ]);
 
+    Route::any('{any}', function() {
+        return response()->json([
+            "status" => 404,
+            "title" => "Not Found"
+        ], 404);
+    })->where('any', '.*');
+
+
 });
