@@ -13,9 +13,3 @@ use Illuminate\Support\Facades\Artisan;
 | simple approach to interacting with each command's IO methods.
 |
 */
-
-Artisan::command('token', function () {
-    $user = User::first();
-    $token = $user->createToken('test');
-    $this->comment($token->plainTextToken);
-})->describe('Generate a token for the first user');
