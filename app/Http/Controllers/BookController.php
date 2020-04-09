@@ -57,7 +57,15 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+        $data = $request->validate([
+            "title" => "",
+            "isbn" => "",
+            "cover" => ""
+        ]);
+
+        $book->update($data);
+
+        return $book;
     }
 
     /**
