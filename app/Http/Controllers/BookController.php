@@ -25,7 +25,16 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            "title" => "required",
+            "isbn" => "",
+            "cover" => ""
+        ]);
+
+        $book = new Book($data);
+        $book->save();
+
+        return $book;
     }
 
     /**
