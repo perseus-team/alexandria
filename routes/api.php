@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::apiResources([
         '/books' => 'BookController',
         '/authors' => 'AuthorController',
+        '/physical-copies' => 'PhysicalCopyController'
     ]);
 
     Route::any('{any}', function() {

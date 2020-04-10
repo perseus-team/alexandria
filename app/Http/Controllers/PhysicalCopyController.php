@@ -14,7 +14,7 @@ class PhysicalCopyController extends Controller
      */
     public function index()
     {
-        //
+        return PhysicalCopy::all();
     }
 
     /**
@@ -25,7 +25,19 @@ class PhysicalCopyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            "book_id" => "required",
+            "location" => "",
+            "notes" => ""
+        ]);
+
+        $physicalCopy = new PhysicalCopy($data);
+
+        $physicalCopy->user_id = $request->user()->id;
+
+        $physicalCopy->save();
+
+        return $physicalCopy;
     }
 
     /**
@@ -36,7 +48,7 @@ class PhysicalCopyController extends Controller
      */
     public function show(PhysicalCopy $physicalCopy)
     {
-        //
+        return $physicalCopy;
     }
 
     /**
@@ -48,7 +60,15 @@ class PhysicalCopyController extends Controller
      */
     public function update(Request $request, PhysicalCopy $physicalCopy)
     {
-        //
+        $data = $request->validate([
+            "book_id" => "",
+            "location" => "",
+            "notes" => ""
+        ]);
+
+        $physicalCopy->update($data);
+
+        return $physicalCopy;
     }
 
     /**
@@ -59,6 +79,7 @@ class PhysicalCopyController extends Controller
      */
     public function destroy(PhysicalCopy $physicalCopy)
     {
-        //
+        $physicalCopy->delete();
+        return true;
     }
 }
