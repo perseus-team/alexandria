@@ -25,7 +25,16 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            "name" => "required",
+            "bio" => "",
+            "photo" => ""
+        ]);
+
+        $author = new Author($data);
+        $author->save();
+
+        return $author;
     }
 
     /**
