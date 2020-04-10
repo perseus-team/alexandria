@@ -57,7 +57,15 @@ class AuthorController extends Controller
      */
     public function update(Request $request, Author $author)
     {
-        //
+        $data = $request->validate([
+            "name" => "",
+            "bio" => "",
+            "photo" => ""
+        ]);
+
+        $author->update($data);
+
+        return $author;
     }
 
     /**
