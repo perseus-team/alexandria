@@ -6,7 +6,12 @@
                 <span class="font-bold">{{ appName }}</span>
             </h1>
         </router-link>
-        <button @click.prevent="logout()" class="tracking-tight hover:text-gray-600 focus:outline-none">Logout</button>
+        <button
+            class="tracking-tight hover:text-gray-600 focus:outline-none"
+            @click.prevent="logout()"
+        >
+            Logout
+        </button>
     </div>
 </template>
 
@@ -20,15 +25,15 @@
             return {
                 appBranding: process.env.MIX_APP_BRANDING || "",
                 appName: process.env.MIX_APP_NAME || "",
-            }
+            };
         },
 
         methods: {
             logout() {
-                document.getElementById('logout-form').submit();
-            }
-        }
-    }
+                document.getElementById("logout-form").submit();
+            },
+        },
+    };
 </script>
 
 <style scoped>

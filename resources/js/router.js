@@ -1,17 +1,19 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import MyBooks from "./views/MyBooks";
+import Vue from "vue";
+import VueRouter from "vue-router";
+import MyBooks from "./views/MyBooks.vue";
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
-    mode: 'history',
+    mode: "history",
 
     routes: [
         {
-            path: '/', name: 'my-books', component: MyBooks,
-            meta: { title: 'My Books' }
+            path: "/",
+            name: "my-books",
+            component: MyBooks,
+            meta: { title: "My Books" },
         },
-    ]
+    ],
 
 });

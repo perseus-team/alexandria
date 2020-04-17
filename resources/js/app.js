@@ -1,15 +1,16 @@
-import Vue from 'vue';
-import router from './router';
-import App from './components/App';
+import Vue from "vue";
+import router from "./router";
+import App from "./components/App.vue";
 
-require('./bootstrap');
+require("./bootstrap");
 
+// eslint-disable-next-line no-unused-vars
 const app = new Vue({
-    el: '#app',
+    el: "#app",
 
     components: {
-        App
+        App,
     },
 
-    router
+    router,
 });
